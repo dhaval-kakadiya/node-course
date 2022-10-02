@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Design by foolishdeveloper.com -->
+  <title>Dhaval Node Login Page</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- <<<<<<<<< CSS >>>>>>>>> -->
+
+  <link rel="stylesheet" href="/css/login.css">
+
+</head>
+
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+
+  <form action="/login" method="post">
+    <h3>Login Here</h3>
+          <%- include('./partials/alert.ejs')%>
+          <label for="username">Email</label>
+          <input type="text" name="email" placeholder="Email or Phone" id="username" />
+
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Password" id="password" />
+
+          <button type="submit">Log In</button>
+          <div class="social">
+
+            <a href="https://myaccount.google.com/" class="go"><i class="fab fa-google"></i> Google</a>
+            <!-- <div class="go"><i class="fab fa-google"></i> Google</div> -->
+            <a href="https://www.facebook.com/login/" class="fb"><i class="fab fa-facebook"></i>Facebook</a>
+            <!-- <a class="fb"><i class="fab fa-facebook"></i> Facebook</a> -->
+          </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
