@@ -43,6 +43,8 @@ const userSchema = new Schema({
     type: Boolean,
     default:false
   }
+},{
+  timestamps: true
 })
 
 userSchema.pre('save', async function (next)  {
@@ -73,10 +75,13 @@ userSchema.pre(/^find/, async function (next)  {
   // this.set({ updatedAt: new Date() });
 });
 
-userSchema.post('find', function (result)  {
-// console.log(JSON.parse(JSON.stringify(result)))
-  // const lastName = result.last_name.toUpperCase();
-  // result.last_name = lastName;
+userSchema.post('find', function (docs)  {
+  if(Array.isArray(docs)){
+    docs.forEach(doc => {
+      doc.first_name = doc.first_name.toUpperCase();
+      console.log("mongoose post method",doc);
+    });
+  }
 });
 
 const user = mongoose.model('user', userSchema)
