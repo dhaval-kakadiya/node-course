@@ -2,6 +2,7 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
+const path = require('path')
 
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -14,7 +15,7 @@ let transporter = nodemailer.createTransport({
 });
 
 exports.getsignup = (req, res) => {
-  res.render("signup");
+ return res.render("signup");
 };
 
 exports.getLogin = (req, res) => {
@@ -150,3 +151,8 @@ exports.signupVerification = async (req, res) => {
     });
   }
 };
+
+
+exports.sendFile = (req, res, next) => {
+  return res.sendFile(path.join(__dirname,'../utils/sitemap.html'))
+}

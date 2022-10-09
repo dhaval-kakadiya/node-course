@@ -8,5 +8,4 @@ const dashboardRouter = require('./dashboardRouter')
 router.use('/', authRouter)
 router.use('/dashboard',dashboardRouter)
 router.use('/user', userRouter)
-
 module.exports = router

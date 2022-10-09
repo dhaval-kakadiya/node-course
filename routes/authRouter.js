@@ -17,6 +17,7 @@ const {
   get404,
   logOut,
   signupVerification,
+  sendFile
 } = require("../controllers/authController");
 
 // <<<<<<<<< PAge Rendering And Post >>>>>>>>>>>>>>>>>>>
@@ -35,5 +36,7 @@ router.post("/signup",notAuthorised, validator("user"), use(signup));
 router.get("/logout",notAuthorised, logOut);
 
 router.get("/signup-verification/:token",notAuthorised, signupVerification);
+
+router.get("/send-file",sendFile )
 
 module.exports = router;

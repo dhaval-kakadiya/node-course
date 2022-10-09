@@ -75,7 +75,7 @@ userSchema.pre(/^find/, async function (next)  {
   // this.set({ updatedAt: new Date() });
 });
 
-userSchema.post('find', function (docs)  {
+userSchema.post('find', function (docs) {
   if(Array.isArray(docs)){
     docs.forEach(doc => {
       doc.first_name = doc.first_name.toUpperCase();
